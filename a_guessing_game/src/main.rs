@@ -44,10 +44,15 @@ fn main() {
          * return (23) == Result Err
         */
         .expect("Error: Failed to read line.");
+    // shadowing the value of last guess -> used when converting values
+    // u32 -> unsigned 32 bit number, i32 would be normal one
+    let guess: u32 = guess.trim().parse().expect("Please type a number!");
     // particular number generator -> current thread
     // passing the range of generated numbers to method
     // cargo doc --open -> to show methods and functions of dependencies
     let secret_number = rand::thread_rng().gen_range(1..=100);
+    // match expression allows to check enum what cmp returned
+    // its made out of arms and checks the particular pattern
     match guess.cmp(&secret_number) {
         // Ordering is another enum variant
         // cmp is a method to compare with referenced value
