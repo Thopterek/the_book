@@ -45,7 +45,22 @@ fn main() {
         let home = IpSplit::V4(127, 0, 0, 1);
         let loopback = IpSplit::V6(String::from("::1"));
     }
+    let m = Message::Quit;
+    m.call();
+    let some_num = Some(5);
+    // how do I access them afterwards?
+    // println!("some number -> {}", some_num.Some);
+    let some_char = Some('e');
+    // println!("char -> {some_char}");
+    let nothing: Option<i32> = None;
+    // println!("Missing int -> {nothing}");
 }
+// Enum Option -> handling something or nothing
+// defined as follows, using generic type param
+// enum Option<T> {
+//    None,
+//    Some(T),
+// }
 
 /*
  * Multiple handling version from none to some values
@@ -56,6 +71,24 @@ enum Message {
     Write(String),
     ChangeColor(i32, i32, i32),
 }
+// method for enum
+impl Message {
+    fn call(&self) {
+        println!("Hello from enum");
+    }
+}
+
+// unit struct
+struct QuitMessage;
+// standard struct
+struct MoveMessage {
+    x: i32,
+    y: i32,
+}
+// tuple struct
+struct WriteMessage(String);
+// also tuple struct
+struct ChangeColorMessage(i32, i32, i32);
 
 struct Ipv4Addr {
     value: String,
