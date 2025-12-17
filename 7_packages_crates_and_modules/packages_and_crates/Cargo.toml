@@ -1,0 +1,18 @@
+[package]
+name = "packages_and_crates"
+version = "0.1.0"
+edition = "2024"
+# --------------
+# convention without mention
+# that src/main.rs is the crate root
+# and its with the same name as package
+# -------------------------------------
+# if contains src/lib.rs its a library
+# Cargo passes the crate root to rustc
+# -------------------------------------
+# if it contains both it makes 2 crates
+# --------------------------------------
+# you add multiple binary crates src/bin
+# just placing files in the directory
+# ------------
+[dependencies]
