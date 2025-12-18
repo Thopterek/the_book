@@ -1,0 +1,6 @@
+[package]
+name = "storing_keys_with_associated_values_in_hash_map"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
