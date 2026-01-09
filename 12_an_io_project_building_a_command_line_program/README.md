@@ -30,3 +30,8 @@
     * Write or modify just enough code to make the new test pass
     * Refactor the code added or changed and make sure the tests still pass
     * Repeat from the first step
+
+# Working through std::env
+
+* allowing to work with enviromental variables
+* minishell style commands that are pre builded into it

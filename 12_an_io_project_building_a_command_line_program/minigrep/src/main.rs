@@ -13,13 +13,14 @@ fn main() {
      * else its calling the code in the closure (anonymous fn)
     */
     let config = Config::build(&ag).unwrap_or_else(|err| {
-        println!("Parsing error while setting up config: {err}");
+        // printing on std err out
+        eprintln!("Parsing error while setting up config: {err}");
         // C style exit with passing the error code
         process::exit(1);
     });
     // no unwrap because we don't return value on success
     if let Err(e) = run(config) {
-        println!("Application error: {e}");
+        eprintln!("Application error: {e}");
         process::exit(1);
     }
 }
