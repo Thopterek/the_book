@@ -17,6 +17,12 @@ struct Inventory {
     shirts: Vec<ShirtColor>,
  }
 
+#[derive(Debug)]
+struct Rectangle {
+    width: u32,
+    height: u32,
+ }
+
 impl Inventory {
     fn giveaway(&self, user_preference: Option<ShirtColor>) -> ShirtColor {
         /*
@@ -104,5 +110,31 @@ fn main() {
     thread::spawn(move || println!("Printing from thread: {some_list:?}"))
         .join()
         .unwrap();
+    /*
+     * a close body can do any of the following
+     * - move a captured value out of closure
+     * - mutate the captured value 
+     * - neither move nor mutate the value 
+     * - capture nothing from environment
+     * The way closure captures handles values changes its trait
+     * they can be one, two or all three from the following Fn traits
+     * - FnOnce applies to closure that can be called once,
+     * if it moves the values its the only trait that it implements
+     * - FnMut applies to the one that mutate the value,
+     * can be called more than once
+     * - Fn applies to closures that don't mutate or move, capture nothing,
+     * can be called mutliple times concurrently
+    */
+    let mut to_check = [
+        Rectangle {width:10, height:1},
+        Rectangle {width:3, height:5},
+        Rectangle {width:7, height:12},
+    ];
+    let mut num_sort_operations = 0;
+    to_check.sort_by_key(|r| {
+        num_sort_operations += 1;
+        r.width
+    });
+    println!("{to_check:#?}, sorted in {num_sort_operations} operations");
 }
 
