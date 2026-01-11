@@ -1,0 +1,3 @@
+Zero-cost abstractions
+
+as per iterator vs for loop
