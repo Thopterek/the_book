@@ -1,0 +1,17 @@
+[package]
+name = "customizing_builds_with_release_profiles"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+
+# this is the basic configuration
+# for dev and release
+[profile.dev]
+opt-level = 0
+
+# opt level controls the number of optimizations
+# its set in range from 0 to 3
+# 0 compiles faster but runs slower, opposite for higher
+[profile.release]
+opt-level = 3
