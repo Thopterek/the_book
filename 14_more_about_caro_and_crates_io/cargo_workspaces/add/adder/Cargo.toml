@@ -1,0 +1,9 @@
+[package]
+name = "adder"
+version = "0.1.0"
+edition = "2024"
+
+# it needs to be added as cargo doesn't assume
+# that crates in workspace depend on each other
+[dependencies]
+add_one = {path = "../add_one"}
