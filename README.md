@@ -10,4 +10,7 @@ _"the many attempts of Nature to evolve a crab"_
 * This repo is my way of solving and building up notes in code following [The Book](https://doc.rust-lang.org/book/)
   * Important to mention is the comments convention is following 'easy to learn' rather good norm
   * The solutions are not finite, but rather exploring the concepts
-  
+ 
+### Papers to read
+
+* [GPU Offload in Rust](https://arxiv.org/pdf/2608.13759)
